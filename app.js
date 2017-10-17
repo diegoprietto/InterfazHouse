@@ -9,10 +9,14 @@ app.use(methodOverride());
 
 var router = express.Router();
 
-router.get('/', function (req, res) {
-    res.send("Hello World!");
-});
+//General
+var rutas = require('./controllers/rutas.js');
 
+//Definir las acciones para las rutas
+router.route('/')
+    .get(rutas.hello);
+
+//Iniciar Server
 app.use(router);
 
 app.listen(3000, function () {

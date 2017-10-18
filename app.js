@@ -9,16 +9,15 @@ app.use(methodOverride());
 
 var router = express.Router();
 
-//General
+//Módulos própios
 var rutas = require('./controllers/rutas.js');
 
 //Definir las acciones para las rutas
-router.route('/')
-    .get(rutas.hello);
+router.route('/getlist')
+    .get(rutas.getlist);
 
 //Iniciar Server
 app.use(router);
-
 app.listen(3000, function () {
     console.log("Node server running on http://localhost:3000");
 });

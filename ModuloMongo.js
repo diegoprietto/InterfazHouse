@@ -38,6 +38,8 @@ Qux.prototype.consultarDatos = function (callbackOk, callbackError, uri, colecci
 				}
 			});
 		}
+		//Cerrar conexión
+		db.close();
 	});
 
 }
@@ -72,15 +74,15 @@ Qux.prototype.guardarArrayRegistros = function(callbackOk, callbackError, uri, c
 						//Ocurrió un error
 						if (callbackError) error(err);
 					}else{
-						//Éxito
-						db.close();
-
 						//Retornar resultado de la consulta
 						if (callbackOk) callbackOk(result);
 					}
 			});
 
 		}
+
+		//Cerrar conexión
+		db.close();
 	});
 }
 
@@ -115,14 +117,15 @@ Qux.prototype.guardarRegistro = function(callbackOk, callbackError, uri, colecci
 						if (callbackError) error(err);
 					}else{
 						//Éxito
-						db.close();
-
 						//Retornar resultado de la consulta
 						if (callbackOk) callbackOk(result);
 					}
 			});
 
 		}
+
+		//Cerrar conexión
+		db.close();
 	});
 }
 
